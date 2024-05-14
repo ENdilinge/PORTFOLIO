@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght600&family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    /*box-sizing: border-box; */
+
+
+}
+.Home{
+    min-height: 100vh;
+    background-color: #17222e;
+    display: flex;
+    justify-content: space-between;
+    align-items:  center;
+    position: relative;
+    padding: 0 80px;
+    overflow: hidden;
+}
+
+
+header{
+    position:fixed;
+    top: 0;
+    left: -5%;
+    font-size: 20px;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px ;
+    z-index: 99;
+    margin-right: 3%;
+    opacity: 1;
+    animation: to_bottom 1s ease forwards 0.1s;
+}
+    
+header nav a{
+    margin-left: 60px;
+    color: white;
+    font-size: 24px;
+    transition: .3s;
+}
+header nav .active,
+header nav a:hover{
+    color: #00bfff;
+    
+}
+
+.text-box{
+    width: 50%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.text-box h1{
+    font-size: 40px;
+    animation: to_right 1s ease forwards .6s;
+}
+.text-box h1:nth-child(2){
+    animation-delay: .7s;
+}
+.text-box .skills{
+    color: #00bfff;
+}
+.text-box p{
+    margin: 35px 0;
+    font-size: 16px;
+    width: 90%;
+    animation: to_right 1s ease forwards .8s;
+}
+.icon-box{
+    display: flex;
+    width: 380px;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+.icon-box i{
+    color: #00bfff;
+    padding: 7px;
+    border: 2px solid #00bfff;
+    font-size: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .2s;
+    animation: to_right 1s ease forwards .9s;
+
+}
+.icon-box i:hover{
+    color: white;
+    background-color: #00bfff;
+    box-shadow: 0 0 15px #00bfff;
+}
+.btn-box{
+    width: 380px;
+    display: flex;
+    justify-content: space-between;
+}
+.btn{
+    position: relative;
+    color: black;
+    width: 180px;
+    height: 48px;
+    border: 2px solid #00bfff;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .3s;
+    z-index: 0;
+    animation: to_right 1s ease forwards .1s;
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height:100%;
+    background-color: #00bfff;
+    z-index: -1;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform .3s;
+}
+.btn-2,
+.btn:hover{
+    color: white;
+}
+.btn:hover::before,
+.btn:nth-child(2)::before{
+    transform-origin: right;
+    transform: scale(0);
+}
+.btn:nth-child(2):hover::before{
+    transform-origin: left;
+    transform: scale(1); 
+}
+.btn:nth-child(2):hover{
+    color: black;
+}
+.img{
+    background-color: #17222e;
+    width: 27%;
+    height: 27%;
+    border-radius: 50%;
+    border: none;
+    position: relative;
+    animation: to_left 1s ease forwards 1s;
+    opacity: 0;
+
+}
+.text-box *{
+    opacity: 0;
+
+}
+.text-box span{
+    opacity: 1;
+}
+.About{
+    background-color: #17222e;
+    padding: 20px;
+    box-shadow: 0 ;
+    color:white;
+    padding-top: 20px;
+    
+}
+.pText{
+    width: 45%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.p2Text{
+    width: 45%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.p3Text{
+    width: 45%;
+    padding-top: 10px;
+}
+#services{
+    padding: 50px 0;
+    background-color: #17222e;
+    color: white;
+}
+
+.services-list{
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(2,1fr);
+    grid: gap 40px;
+    margin-top: 20px;
+}
+.services-list div{
+    background-color: black;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    margin: 20px;
+    color: white;
+    transition: background 0.5s,transform 0.5s;
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.services-list div a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.services-list div:hover{
+    background: #ff004f;
+    transform: translateY(-10px);
+}
+/*keyframes*/
+@keyframes tp_bottom {
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+    
+}
+@keyframes to_right{
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes to_left{
+    0%{
+        opacity: 0;
+        transform: translateX(50px);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
